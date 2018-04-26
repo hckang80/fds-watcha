@@ -1,0 +1,94 @@
+.director-dialog {
+    overflow: auto;
+    overflow-x: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    background: rgba(0,0,0,.3);
+}
+.inner {
+    overflow: hidden;
+    position: relative;
+    width: 660px;
+    margin: 50px auto;
+    background: red;
+    border-radius: 5px;
+    animation: modal-ani .4s forwards;
+}
+.layout-container {
+  background-color: #E5E5E5;
+  margin: 0 0;
+  padding: 20;
+}
+.directorpage {
+  width: 660px;
+}
+.director-info {
+  background-image: url("../../../assets/images/avengers.jpg");
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 170px;
+  margin: 0 auto;
+  padding: 20px;
+  white-space: nowrap;
+  font-size: 1.8rem;
+  .stillcut {
+    overflow: hidden;
+    margin: 0 auto;
+    background-size: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .photo {
+    overflow: hidden;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    border-radius: 100%;
+    background-size: 100%;
+    box-shadow: 0 0 1em whitesmoke;
+    img {
+      width: 100%;
+    }
+  }
+  .name {
+    display: block;
+    margin: 8px 0 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: whitesmoke;
+  }
+}
+.directorpage h3 {
+  padding: 10px 10px;
+}
+
+:host ::ng-deep .poster-type {
+  width: 140px;
+  height: 200px;
+  .star {
+    width: 7px;
+    height: 14px;
+    &:nth-child(even) {
+      background-position: -7px 0;
+      margin-right: 2px;
+    }
+  }
+  .add-button {
+    font-size: 0;
+    margin: 0 10px;
+    &::before, &::after {
+      font-size: 1.4rem;
+    }
+  }
+}
+:host ::ng-deep .list-movie {
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}

@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <app-header></app-header>
+
+  <main class="layout-container">
+    <div class="inner-guide">
+      <ul class="list-recommend">
+        <li *ngFor="let movie of boxOfficePage.todayBoxOffice">
+          <div class="wrap">
+            <movie-poster [moviePoster]="movie"></movie-poster>
+            <!-- <div class="tag">
+              <div class="flipper">
+                <span class="currunt">좋아하는 태그 연애</span>
+                <span class="active">이유록 님이 선호하는 태그인 연애 입니다.</span>
+              </div>
+            </div> -->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <main-footer></main-footer>
+</div>

@@ -1,0 +1,120 @@
+@import '../../../variables';
+
+:host .inner-guide {
+  width: 960px;
+}
+
+.list-movie {
+  flex-flow: row wrap;
+  > li {
+    width: 50%;
+    .poster-type:hover .hidden-layer.rated {
+      display: block;
+    }
+    .hidden-layer.rated {
+      display: none;
+    }
+    movie-poster {
+      float: left;
+    }
+  }
+}
+.comment-box,
+.poster-type {
+  float: left;
+}
+.comment-box {
+  position: relative;
+  width: 239px;
+  height: 314px;
+  padding: 15px 20px;
+  .movie-title {
+    padding-bottom: 10px;
+    font-size: 2rem;
+  }
+  .movie-info {
+    font-size: 1.2rem;
+    color: rgb(141, 141, 141);
+  }
+  .date {
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+  }
+  .comment-more {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 15px;
+    background: url('../../../assets/images/icon-comment-menu.svg') no-repeat;
+
+    ul {
+      display: none;
+      position: relative;
+      left: -45px;
+      top: 20px;
+    }
+    &:hover ul {
+      display: block;
+    }
+    a:hover {
+      background: $global-color;
+      color: #fff;
+    }
+    .edit,
+    .delete {
+      display: block;
+      padding: 10px;
+      width: 67px;
+      background: #fff;
+      border: 1px solid #ddd;
+    }
+    .delete {
+      border-top: 0px;
+    }
+  }
+
+  .star {
+    width: 7px;
+    height: 14px;
+    cursor: unset;
+    &:nth-child(even) {
+      background-position: -7px 0;
+      margin-right: 2px;
+    }
+  }
+  .btn-action {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    .action-like {
+      width: 20px;
+      height: 20px;
+      background: url('/assets/images/icon-thumb.svg') no-repeat;
+    }
+    .like-count {
+      color: rgb(141, 141, 141);
+    }
+    .action-report {
+      display: none;
+      width: 24px;
+      height: 22px;
+      margin-left: 15px;
+      background: url('/assets/images/icon-comment-report.svg') no-repeat;
+    }
+  }
+  &:hover .btn-action .action-report {
+    display: inline;
+  }
+
+}
+
+@media (max-width: 1600px) {
+  .list-movie {
+    li {
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import '../../../variables';
+
+.list-movie {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    width: 960px;
+    li {
+    width: 25%;
+    }
+}
+:host ::ng-deep {
+  .poster-type .hidden-layer.rated {
+    display: none;
+  }
+  .poster-type {
+    &:hover .hidden-layer{
+      display: block;
+    }
+  }
+}
+.BW-rating-star{
+    text-align: center;
+    background-color:#e5e5e5;
+    margin-top: 10px;
+}
+
+.BW-rating-star button {
+    width: 8px;
+    height: 16px;
+    cursor: unset;
+    &.star {
+    background-image: none;
+    background-position: 0px 0px;
+        &.star-on {
+          background-image: url("../../../assets/images/greystar.jpg");
+        }
+        &:nth-child(even) {
+            background-position: -8px 0px;
+        }
+    }
+}
+
+

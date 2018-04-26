@@ -1,0 +1,70 @@
+
+<div class="profile-wrap">
+  <div class="profile-head">
+    <div class="photo">
+      <!-- <img src="../../../assets/images/user-avatar-100.jpg" alt=""> -->
+    </div>
+    <div class="profile">
+      <span class="name">{{ nickName }}</span>
+      <span class="file">
+        <i class="icon-camera"></i>
+        <form #photoForm="ngForm" (ngSubmit)="photoChange(photoForm.value)">
+          <input type="file" name="photo" ngModel #photo="ngModel" (change)="getFiles($event)">
+          <!-- <input type="submit"> -->
+        </form>
+      </span>
+    </div>
+  </div>
+
+  <form #userForm="ngForm">
+    <fieldset>
+      <legend>프로필 수정</legend>
+      <div class="profile-body">
+        <table>
+          <tbody>
+            <tr>
+              <td class="th">이메일</td>
+              <td>
+                {{ email }}
+                <!-- <button type="button" class="btn-default" cdkFocusInitial>변경하기</button> -->
+              </td>
+            </tr>
+            <tr>
+              <td class="th">닉네임</td>
+              <td>
+                <input type="text" name="nickname" 
+                  value="{{ nickName }}" placeholder="이름"
+                  ngModel #nickname="ngModel" required>
+                <p class="desc">최소 2자, 최대 20글자까지 가능합니다.</p>
+              </td>
+            </tr>
+            <!-- <tr>
+              <td class="th">비밀번호 변경</td>
+              <td>
+                <input type="password" name="password1" value="" placeholder="기존 비밀번호">
+                <input type="password" name="password2" value="" placeholder="새 비밀번호">
+                <input type="password" name="password3" value="" placeholder="새 비밀번호 확인">
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="layer-foot">
+        <div class="inner">
+          <div>
+            <!-- <button type="button" class="btn-default">탈퇴하기</button> -->
+          </div>
+          <div>
+            <button type="button" class="btn-default" mat-dialog-close>취소</button>
+            <button type="button" class="btn-default btn-orange" [disabled]="userForm.invalid" [mat-dialog-close]="userForm.value">확인</button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

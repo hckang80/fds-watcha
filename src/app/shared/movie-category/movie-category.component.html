@@ -1,0 +1,24 @@
+<section class="theme-area" #target>
+  <h4 class="skip">테마별 영화</h4>
+  <ul>
+    <ng-container *ngFor="let movieCategoryList of movieCategoryLists; let i = index" >
+      <li *ngIf="i<movieListLength"
+      [class.active]="movieCategoryList.active"
+      (click)="changeCategory(movieCategoryList.genre, page)"
+      class="category-list">
+        <a class="btn-category">
+          <span class="category">{{ movieCategoryList.category }}
+            <span class="highright-border"></span>
+          </span>
+        </a>
+      </li>
+    </ng-container>
+    <!-- <li>
+      <a href="#">
+        <span>왓챠 평균별점 TOP 영화</span>
+      </a>
+    </li> -->
+  </ul>
+  <a routerLink="/evalmore" class="view-all" *ngIf="movieListLength === 13">모두보기</a>
+  <a class="view-all" *ngIf="movieListLength === 24" (click)="scrollTop()">맨 위로</a>
+</section>

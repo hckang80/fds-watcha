@@ -1,0 +1,75 @@
+<div class="wrapper">
+  <app-header></app-header>
+
+  <main class="layout-container">
+    <div class="inner-guide">
+      <div class="main-content">
+        <preloader></preloader>
+        <section class="box-office" *ngIf="mainView">
+          <div class="body">
+            <div class="outer">
+              <div class="inner">
+                <div class="conLeft">
+                  <box-office-ranking></box-office-ranking>
+                </div>
+                <div class="conRight">
+                  <ng-container *ngIf="movieDetail">
+                    <ul class="list-boxoffice">
+                      <li *ngFor="let detail of movieDetail.results">
+                        <div class="wrap">
+                          <div class="poster">
+                            <movie-poster [moviePoster]="detail"></movie-poster>
+                          </div>
+                          <div class="detail-infor">
+                            <div class="head">
+                              <h5>{{ detail.title_ko }}</h5>
+                              <div class="sub-info">
+                                <span>개봉일 {{ detail.d_day }}</span>
+                                <span>누적 관객수 {{ detail.audience | commasNumbers }}명</span>
+                              </div>
+                            </div>
+                            <div class="body">
+                              <div class="movie">
+                                <span><ng-container *ngFor="let genre of detail.genre">{{ genre.genre }}, </ng-container> {{ detail.running_time }}분, {{ detail.film_rate }}</span>
+                                <span>
+                                  <div class="star-ui" [attr.data-value]="detail.rating_avg">
+                                    <span
+                                      *ngFor="let star of movieDetailService.starRate" 
+                                      [attr.data-value]="star" 
+                                      [class.on]="star <= detail.rating_avg">
+                                    </span>
+                                  </div>
+                                  {{ detail.rating_avg }} <!--(195명 참여)-->
+                                </span>
+                              </div>
+                              <div class="directors">감독 : 
+                                <ng-container *ngFor="let member of detail.members | membersFilter: 'director'">{{ member.name }}, </ng-container>
+                              </div>
+                              <div class="casts">주연 :
+                                <ng-container *ngFor="let member of detail.members | membersFilter: 'leadingRole'">{{ member.name }}, </ng-container>
+                              </div>
+                            </div>
+                            <!-- <div class="guest">
+                              <div class="photo"><a href="#"></a></div>
+                              <dl>
+                                <dt><a href="#">차지훈</a> 보고싶어요</dt>
+                                <dd>타노스 공짜로 지구 먹을 생각에 머리가 대머리가 됐구나 싶습니다.</dd>
+                              </dl>
+                              <div class="link"><i class="icon-heart"></i> 9,428</div>
+                            </div> -->
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <main-footer></main-footer>
+</div>

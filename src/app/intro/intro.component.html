@@ -1,0 +1,25 @@
+<div class="intro-body">
+  <div class="modal-connect">
+    <section>
+      <h1 class="logo"><img src="/assets/images/icon-w.png" alt="왓챠"></h1>
+      <p class="text-image"><img src="/assets/images/text-movie-plz.png" alt="오늘 영화도 부탁해!"></p>
+      <p class="text">왓챠는 오늘 영화 뭐 볼까?를 해결하는 서비스입니다.<br> 이미 왓챠 회원이신가요? <a routerLink="/login">로그인</a></p>
+      <div class="btn-group">
+        <a (click)="socialSignin('facebook')" class="fb"><i class="icon-facebook"></i> 페이스북으로 1초만에 가입</a>
+        <a routerLink="/join" class="mail"><i class="icon-mail"></i> 이메일로 10초만에 가입</a>
+      </div>
+    </section>
+  </div>
+  <div class="footer">
+    <div class="con-left">
+      <a href="http://www.frograms.com/" target="_blank" class="logo"><img src="/assets/images/text-frogram.png" alt="frograms"></a>
+      <i class="icon-star-empty"></i>
+      <span class="text">379,427,306개의 별점 평가가 있습니다.</span>
+      <button (click)="openPrivacy()" class="link">개인정보처리방침</button>
+    </div>
+    <div class="con-right">
+      <a href="https://play.google.com/store/apps/details?id=com.frograms.watcha" target="_blank" title="새창"><img src="/assets/images/btn-google-play.png" alt="구글 플레이 다운로드"></a>
+      <a href="https://itunes.apple.com/kr/app/yeonghwagwan-gal-ttae-pilsuaeb/id644185507?mt=8" target="_blank" title="새창"><img src="/assets/images/btn-app-store.png" alt="앱스토어 다운로드"></a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,232 @@
+<div class="section-wrap" *ngIf="pageShow">
+  <section class="statistics rating-graph">
+    <h3 class="section-title">영화별점 분포</h3>
+    <div class="graph">
+      <canvas baseChart width="460" height="200" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+        [colors]="lineChartColors"  [chartType]="lineChartType"  chart-dataset-override="datasetOverride"></canvas>
+        <ol class="scores">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+        </ol>
+    </div>
+    <ul class="rating-stat">
+      <li><div class="rating-average">{{ratingAvg}}</div>별점 평균</li>
+      <li><div>{{ratingTotal}}</div>별점 수</li>
+    </ul>
+  </section>
+  <!-- <section class="statistics director">
+    <h3 class="section-title">선호감독</h3>
+    <ul class="list-type01">
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/e0eadc7b426973cddf6a.jpg?1518502061" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">크리스토퍼 놀란</a></h3>
+            <a href="" class="movie-name">다크나이트</a>
+          </div>
+        </div>
+        <div class="score"><strong>50</strong>점/ 8편</div>
+      </li>
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/e0eadc7b426973cddf6a.jpg?1518502061" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">크리스토퍼 놀란</a></h3>
+            <a href="" class="movie-name">다크나이트</a>
+          </div>
+        </div>
+        <div class="score"><strong>50</strong>점/ 8편</div>
+      </li>
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/e0eadc7b426973cddf6a.jpg?1518502061" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">크리스토퍼 놀란</a></h3>
+            <a href="" class="movie-name">다크나이트</a>
+          </div>
+        </div>
+        <div class="score"><strong>50</strong>점/ 8편</div>
+      </li>
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/e0eadc7b426973cddf6a.jpg?1518502061" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">크리스토퍼 놀란</a></h3>
+            <a href="" class="movie-name">다크나이트</a>
+          </div>
+        </div>
+        <div class="score"><strong>50</strong>점/ 8편</div>
+      </li>
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/e0eadc7b426973cddf6a.jpg?1518502061" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">크리스토퍼 놀란</a></h3>
+            <a href="" class="movie-name">다크나이트</a>
+          </div>
+        </div>
+        <div class="score"><strong>50</strong>점/ 8편</div>
+      </li>
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/e0eadc7b426973cddf6a.jpg?1518502061" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">크리스토퍼 놀란</a></h3>
+            <a href="" class="movie-name">다크나이트</a>
+          </div>
+        </div>
+        <div class="score"><strong>50</strong>점/ 8편</div>
+      </li>
+    </ul>
+  </section>
+  <section class="statistics actor">
+    <h3 class="section-title">선호 배우</h3>
+    <ul class="list-type01">
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/11c5c25e9e23ed967b36.jpg?1494045957" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">톰 크루즈</a></h3>
+            <a href="" class="movie-name">미션임파서블</a>
+          </div>
+        </div>
+        <div class="score">
+          <strong>50</strong>점/ 8편
+        </div>
+      </li>
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/11c5c25e9e23ed967b36.jpg?1494045957" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">톰 크루즈</a></h3>
+            <a href="" class="movie-name">미션임파서블</a>
+          </div>
+        </div>
+        <div class="score">
+          <strong>50</strong>점/ 8편
+        </div>
+      </li>
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/11c5c25e9e23ed967b36.jpg?1494045957" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">톰 크루즈</a></h3>
+            <a href="" class="movie-name">미션임파서블</a>
+          </div>
+        </div>
+        <div class="score">
+          <strong>50</strong>점/ 8편
+        </div>
+      </li>
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/11c5c25e9e23ed967b36.jpg?1494045957" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">톰 크루즈</a></h3>
+            <a href="" class="movie-name">미션임파서블</a>
+          </div>
+        </div>
+        <div class="score">
+          <strong>50</strong>점/ 8편
+        </div>
+      </li>
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/11c5c25e9e23ed967b36.jpg?1494045957" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3><a href="" class="name">톰 크루즈</a></h3>
+            <a href="" class="movie-name">미션임파서블</a>
+          </div>
+        </div>
+        <div class="score">
+          <strong>50</strong>점/ 8편
+        </div>
+      </li>
+      <li>
+        <img src="https://d12hfz37g51hrt.cloudfront.net/ppl/medium/11c5c25e9e23ed967b36.jpg?1494045957" alt="" class="face">
+        <div class="info">
+          <div class="names">
+            <h3>
+              <a href="" class="name">톰 크루즈</a>
+            </h3>
+            <a href="" class="movie-name">미션임파서블</a>
+          </div>
+        </div>
+        <div class="score">
+          <strong>50</strong>점/ 8편
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section class="statistics best-comment">
+    <h3 class="section-title">홍길동 님이 쓴 인기코멘트</h3>
+    <div class="movie-bg" style="background: url('http://dhgywazgeek0d.cloudfront.net/watcha/image/upload/v1466142041/sercf69ybtcslkxkpi16.jpg') center center no-repeat">
+      <cite class="movie-name"><a href="">루비스팍스</a></cite>
+    </div>
+    <div class="user">
+      <div class="rating-star">
+        <button *ngFor="let item of rateScore" data-value="{{ item }}" class="star" [class.star-on]="item <= 5" (click)="rateFilm($event.target, i)"></button>
+      </div>
+      <div class="user-comment">
+        저 타자기를 갖고싶다
+      </div>
+      <div class="action">
+        <div class="btn-action">
+          <button class="action-like" title="이 코멘트 추천하기"></button>
+          <span class="like-count">13</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="statistics tag">
+    <h3 class="section-title">영화 선호태그</h3>
+    <div class="word-cloud">
+      <div AgWordCloud  [wordData]="wordData" [options]="WordCloudOptions" #word_cloud_chart=ag-word-cloud></div>
+    </div>
+  </section> -->
+
+  <section class="statistics nation">
+    <h3 class="section-title">선호국가</h3>
+    <div class="worldmap">
+
+
+    </div>
+    <ul class="list-type02">
+        <li *ngFor="let nation of topNation">
+          <span class="sort">{{nation[0]}}</span>
+          <span class="score">{{nation[1]}}점</span>
+          <span class="count">{{nation[2]}}편</span>
+        </li>
+    </ul>
+  </section>
+
+  <section class="statistics genre">
+    <h3 class="section-title">영화 선호장르</h3>
+    <div class="graph">
+      <canvas baseChart [data]="doughnutChartData" [chartType]="doughnutChartType" (chartHover)="chartHovered($event)" [labels]="doughnutChartLabels"
+        [options]="doughnutChartOptions" [colors]="doughnutChartColors"></canvas>
+    </div>
+    <ul class="list-type02">
+      <li *ngFor="let genre of topGenre">
+        <span class="sort">{{genre[0]}}</span>
+        <span class="score">{{genre[1]}}점</span>
+        <span class="count">{{genre[2]}}편</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="statistics time">
+    <h3 class="section-title">시청시간</h3>
+    <div class="time-sum">
+      <div class="circle">{{ totalRuntime }}</div>
+    </div>
+  </section>
+</div>

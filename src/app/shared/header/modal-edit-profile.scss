@@ -1,0 +1,94 @@
+.profile-wrap {
+  margin: -24px;
+}
+
+.profile-head {
+  height: 160px;
+  padding: 20px 0 0;
+  background: orange;
+  text-align: center;
+  .photo {
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background: url('../../../assets/images/bg-photo.png') no-repeat;
+    background-size: 100%;
+    border-radius: 100%;
+  }
+  .profile {
+    display: inline-block;
+    .name {
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: #fff;
+    }
+    .file {
+      display: inline-block;
+      vertical-align: middle;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+    }
+    input[type="file"] {
+      position: absolute;
+      right: 0;
+      top: 0;
+      opacity: 0;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.profile-body {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.4rem;
+    td {
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+    .th {
+      width: 170px;
+      font-weight: bold;
+      background: #f6f6f6;
+    }
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 220px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #cdc7be;
+    border-radius: 3px;
+    background: #faf6ef;
+  }
+  input[type="password"] + input[type="password"] {
+    margin: 10px 0 0;
+  }
+  .desc {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+    color: #aaa;
+  }
+}
+
+.layer-foot {
+  padding: 10px;
+  .inner {
+    display: table;
+    width: 100%;
+    > div {
+      display: table-cell;
+      vertical-align: middle;
+      + div {
+        text-align: right;
+      }
+    }
+  }
+}

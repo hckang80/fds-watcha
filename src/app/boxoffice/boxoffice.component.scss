@@ -1,0 +1,54 @@
+.main-content {
+  .inner {
+    height: auto;
+  }
+}
+
+.list-boxoffice {
+  li {
+    padding: 10px;
+  }
+  .wrap {
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    background: #fff;
+  }
+  .poster {
+    float: left;
+  }
+  .detail-infor {
+    margin: 0 0 0 220px;
+    padding: 20px;
+    .head {
+      margin: 0 0 15px;
+      padding: 0 0 15px;
+      border-bottom: 1px solid #e6e6e6;
+      h5 {
+        margin: 0 0 15px;
+        font-weight: bold;
+        font-size: 2.4rem;
+        color: #333;
+      }
+    }
+    .body {
+      color: #aaa;
+      .movie {
+          margin: 0 0 10px;
+        > span {
+          display: block;
+          margin: 0 0 5px;
+        }
+      }
+      .directors {
+        margin: 0 0 5px;
+      }
+      .casts {
+        margin: 0 0 5px;
+      }
+    }
+    .guest {
+
+    }
+  }
+}

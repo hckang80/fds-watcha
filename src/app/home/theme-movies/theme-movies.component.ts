@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { ThemeMovies } from '../shared/theme-movies.interface';
 
 @Component({
   selector: 'theme-movies',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThemeMoviesComponent implements OnInit {
 
-  constructor() { }
+  @Input() themeMovies: ThemeMovies[];
 
-  ngOnInit() {
-  }
+  constructor(
+    public router: Router
+  ) { }
+
+  ngOnInit() { }
 
 }

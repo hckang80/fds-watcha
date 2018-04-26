@@ -1,0 +1,42 @@
+@import '../../../variables.scss';
+
+.ranking-area {
+  overflow: hidden;
+  border-radius: 5px;
+  .title {
+    padding: 15px;
+    color: #fff;
+    border-bottom: 1px solid darken($global-color, 20%);
+  }
+  height: 100%;
+  background: $global-color;
+  ol {
+    padding: 15px;
+    list-style-type: none;
+  }
+  .ranking-list {
+    height:30px;
+    color: white;
+    .rank {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      font-size: 1.4rem;
+      line-height: 16px;
+      text-align: center;
+      border-radius: 3px;
+      background: #000;
+    }
+    &:nth-child(n + 3) .rank {
+      background: #fff;
+      color: #000;
+    }
+    a {
+      display: block;
+      overflow: hidden;
+      font-size: 16px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

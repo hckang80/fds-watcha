@@ -1,0 +1,48 @@
+.list-recommend {
+  font-size: 0;
+  li {
+    display: inline-block;
+    width: 20%;
+    padding: 10px;
+    font-size: 1.3rem;
+    vertical-align: top;
+    .wrap {
+      overflow: hidden;
+      border-radius: 5px;
+    }
+    .tag {
+      position: relative;
+      perspective: 1000px;
+      height: 50px;
+      background: #fff;
+      &:hover {
+        .flipper {
+          transform: rotateY(180deg);
+        }
+      }
+      .flipper {
+        position: relative;
+        height: 100%;
+        transition: transform .3s linear;
+        transform-style: preserve-3d;
+        > * {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          padding: 5px 10px;
+          align-items: center;
+          position: absolute;
+          backface-visibility: hidden;
+        }
+      }
+      .currunt {
+        justify-content: center;
+        transform: rotateY(0deg);
+      }
+      .active {
+        justify-content: left;
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}

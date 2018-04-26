@@ -1,0 +1,43 @@
+@import '../../variables';
+
+.main-section {
+    margin: 100px 100px;
+}
+.main-title {
+    font-size: 1.2em;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.search-tab-wapper {
+    font-weight: 300;
+    margin-bottom: 50px;
+    a:hover {
+      color: $global-color;
+    }
+}
+.tab-movie{
+     margin-left: 10px;
+}
+.list-movie {
+    flex-flow: row wrap;
+    justify-content: flex-start; 
+    li {
+    width: 20%;
+    }
+} 
+.search-result {
+    background-color: #fff;
+    padding: 17px 15px;
+}
+.search-title{
+    font-size: 1.1em;
+    color: #79b3d4;
+    
+}
+.search-summury {
+    padding: 17px 15px;
+    background-color: #f9f8f4;
+}
+.search-result, .search-summury {
+    width: 220px;
+}

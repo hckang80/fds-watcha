@@ -1,0 +1,49 @@
+<div class="user-area">
+  <div class="logo">
+    <h1><img src="/assets/images/logo-watcha.png" alt="watcha"></h1>
+  </div>
+  <div class="inner">
+    <div class="box top">
+      <h2>로그인</h2>
+      <form [formGroup]="userForm" (ngSubmit)="signin()" novalidate>
+        <fieldset>
+          <legend>이메일과 비밀번호로 로그인</legend>
+          <div class="wrap">
+            <div class="input">
+              <label>이메일 주소</label>
+              <input type="email" name="email" value="" placeholder="이메일 주소"
+                formControlName="email">
+              <em *ngIf="email.errors?.required && email.touched" class="invalid-msg">
+                필수 입력 항목입니다!
+              </em>
+              <em *ngIf="email.errors?.pattern && email.touched" class="invalid-msg">
+                이메일 형식으로 입력해 주세요!
+              </em>
+            </div>
+            <div class="input">
+              <label>비밀번호</label>
+              <input type="password" name="password" value="" placeholder="비밀번호"
+                formControlName="password">
+              <em *ngIf="password.errors?.required && password.touched" class="invalid-msg">
+                비밀번호를 입력해주세요!
+              </em>
+            </div>
+            <button class="submit" [disabled]="userForm.invalid">로그인</button>
+            <p class="error-msg" *ngIf="message">{{ message }}</p>
+            <div class="links">
+              <button>비밀번호 찾기 /</button>
+              <a routerLink="/join">회원 가입하기</a>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="box bottom">
+      <div class="wrap">
+       <span class="notice">이미 페이스북으로 가입하셨다면</span>
+       <a (click)="socialSignin('facebook')" class="icon-btn fb"><span class="icon"><i class="icon-facebook"></i></span><span class="text"> facebook으로 로그인</span></a>
+      </div>
+    </div>
+  </div>
+</div>

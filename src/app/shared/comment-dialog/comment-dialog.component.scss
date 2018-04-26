@@ -1,0 +1,39 @@
+@import "../../../variables.scss";
+
+.comment-dialog {
+  width: 620px;
+  .poster {
+    float: left;
+    width: 150px;
+  }
+  .txtarea-wrapper {
+    float: left;
+    width: 460px;
+    textarea {
+      padding: 10px;
+      width: 100%;
+      height: 215px;
+      border: none;
+      outline: none;
+      resize: none;
+    }
+  }
+  .submit {
+    color: #fff;
+    background: $global-color;
+    padding: 10px 30px;
+    border-radius: 7px;
+    float: right;
+  }
+  .close-dialog {
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    float: right;
+    background: url("../../../assets/images/btn-close.svg") no-repeat;
+    text-indent: -9999px;
+  }
+}
+.mat-dialog-actions {
+  flex-direction: row-reverse;
+}

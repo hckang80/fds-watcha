@@ -1,0 +1,38 @@
+<div class="director-dialog" (click)="movieDetailDialogService.close($event.target)">
+  <div class="inner">
+    <main class="layout-container" style="margin:0 0;padding-top:0;">
+      <div class="directorpage">
+        <div class="director-info" [style.background-image]="'url(' + movieDetailService.movie.still_cuts[0].still_img + ')'">
+          <div class="photo">
+            <img src="{{ movieDetailDialogService.movieMemberDetail.img_profile }}" alt="">
+          </div>
+          <span class="name">{{ movieDetailDialogService.movieMemberDetail.name }}</span>
+        </div>
+        <ng-container *ngIf="movieDetailDialogService.getDirectedMovieCount()">
+          <div class="director-role">
+            <h3>감독으로 참여한 작품입니다. ({{ movieDetailDialogService.getDirectedMovieCount() }})개</h3>
+          </div>
+          <div class="content">
+            <ul class="list-movie">
+              <li *ngFor="let moviePoster of movieDetailDialogService.moviePosterByDirector ; let i = index">
+                <movie-poster [moviePoster]="moviePoster" [posterSmall]="posterSmall"></movie-poster></li>
+            </ul>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="movieDetailDialogService.getStarringMovieCount()">
+          <div class="actor-role">
+            <h3>배우로 참여한 작품입니다. ({{ movieDetailDialogService.getStarringMovieCount() }})개</h3>
+          </div>
+          <div class="content">
+            <ul class="list-movie">
+              <li *ngFor="let moviePoster of movieDetailDialogService.moviePosterByActor ; let i = index">
+                <movie-poster [moviePoster]="moviePoster" [posterSmall]="posterSmall"></movie-poster></li>
+            </ul>
+          </div>
+        </ng-container>
+        
+      </div>
+    </main>
+  </div>
+</div>

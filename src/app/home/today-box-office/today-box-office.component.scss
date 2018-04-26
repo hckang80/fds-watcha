@@ -1,0 +1,12 @@
+:host {
+  position: relative;
+  overflow: hidden;
+}
+.card {
+  &:first-child .poster-type{
+    width: 100%;
+  }
+}
+.list-movie {
+  position: relative;
+}

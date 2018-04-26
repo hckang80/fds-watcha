@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BoxOfficePagenationService } from '../box-office-pagenation.service';
 
 @Component({
   selector: 'today-box-office',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./today-box-office.component.scss']
 })
 export class TodayBoxOfficeComponent implements OnInit {
-
-  constructor() { }
+  flag = true;
+  constructor(
+    public boxOfficePage: BoxOfficePagenationService
+  ) {}
 
   ngOnInit() {
+    this.boxOfficePage.loadTopFive();
   }
-
 }
+

@@ -1,0 +1,68 @@
+<div class="user-area">
+  <div class="logo">
+    <h1>
+      <img src="/assets/images/logo-watcha.png" alt="watcha">
+    </h1>
+  </div>
+  <div class="inner">
+    <div class="box top">
+      <h2>회원가입</h2>
+      <form [formGroup]="userForm" (ngSubmit)="signup()" novalidate>
+        <fieldset>
+          <legend>이메일과 비밀번호로 로그인</legend>
+          <div class="wrap">
+            <div class="input">
+              <label>이메일 주소</label>
+              <input type="email" name="email" value="" placeholder="이메일 주소" formControlName="email">
+              <em *ngIf="email.errors?.required && email.touched" class="invalid-msg">
+                필수 입력 항목입니다!
+              </em>
+              <em *ngIf="email.errors?.pattern && email.touched" class="invalid-msg">
+                이메일 형식으로 입력해 주세요!
+              </em>
+            </div>
+            <div class="input">
+              <label>이름</label>
+              <input type="text" name="nickname" value="" placeholder="이름" formControlName="nickname">
+              <em *ngIf="nickname.errors?.required && nickname.touched" class="invalid-msg">
+                필수 입력 항목입니다!
+              </em>
+            </div>
+            <div class="input">
+              <label>비밀번호(6자 이상)</label>
+              <input type="password" name="password" value="" placeholder="비밀번호(6자 이상)" formControlName="password">
+              <em *ngIf="password.errors?.required && password.touched" class="invalid-msg">
+                비밀번호를 입력해주세요!
+              </em>
+              <em *ngIf="password.errors?.minlength && password.touched" class="invalid-msg">
+                비밀번호는 6자 이상 입력해주세요!
+              </em>
+            </div>
+            <div class="txt-agree">
+              <label><input type="checkbox" name="nm-ag1" value="" formControlName="agree1" required><span><em>왓챠 서비스 이용 약관</em>에 동의합니다.</span></label>
+              <label><input type="checkbox" name="nm-ag2" value="" formControlName="agree2" required><span><em>개인정보 수집 이용</em>에 동의합니다.</span></label>
+            </div>
+            <button class="icon-btn mail" [disabled]="userForm.invalid">
+              <span class="icon">
+                <i class="icon-mail"></i>
+              </span>
+              <span class="text"> 등록하기</span>
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="box bottom">
+      <div class="wrap">
+        <span class="notice">페이스북 아이디가 있으시다면</span>
+        <a (click)="socialSignin('facebook')" class="icon-btn fb">
+          <span class="icon">
+            <i class="icon-facebook"></i>
+          </span>
+          <span class="text"> 페이스북으로 1초만에 가입</span>
+        </a>
+        <span class="login">이미 회원이신가요? <a routerLink="/login">로그인</a></span>
+      </div>
+    </div>
+  </div>
+</div>

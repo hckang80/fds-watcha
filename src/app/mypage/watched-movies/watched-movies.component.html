@@ -1,0 +1,8 @@
+<ul class="list-movie">
+  <li *ngFor="let moviePoster of moviePosters ; let i = index">
+    <movie-poster [moviePoster]="moviePoster"></movie-poster>
+    <div class="BW-rating-star">
+      <button *ngFor="let rate of rateScore" data-value="{{ rate }}" class="star" [class.star-on]="rate <= +moviePoster.login_user_checked.rating"></button>
+    </div>
+  </li>
+</ul>

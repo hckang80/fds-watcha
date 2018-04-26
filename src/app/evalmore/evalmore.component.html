@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <app-header></app-header>
+
+  <main class="layout-container">
+
+    <div class="inner-guide">
+      <div class="main-content">
+        <section class="enum-movies">
+          <div class="body">
+            <div class="user-watched">
+              <!-- {{ watchedCount }} -->
+              <span class="count"> {{ watchedCount }}</span>
+              <div class="count-bar" [ngStyle]="{'width': countBarPercent*100 + '%'}"></div>
+            </div>
+            <div class="outer">
+              <div class="inner">
+                <div class="conLeft">
+                  <movie-category [movieListLength]="movieListLength" [page]="page"></movie-category>
+                </div>
+                <div class="conRight">
+                  <my-movies [page]="page"></my-movies>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <preloader></preloader>
+      </div>
+    </div>
+  </main>
+
+  <main-footer></main-footer>
+</div>

@@ -1,0 +1,21 @@
+<div class="poster-type" [attr.data-id]="moviePoster.id">
+  <div class="movie-poster" (click)="movieDetailService.movieDetail(moviePoster.id)">
+    <img src="{{ moviePoster.poster_image }}" alt="" *ngIf="moviePoster.poster_image ">
+    <img src="{{ moviePoster.poster_image_m }}" alt="" *ngIf="moviePoster.poster_image_m&&!moviePoster.poster_image">
+    <img src="{{ moviePoster.poster_image_s }}" *ngIf="moviePoster.poster_image_s">
+  </div>
+  <div class="hidden-layer" [class.rated]="rating>0 || want">
+    <cite class="movie-name">{{ moviePoster.title_ko }}</cite>
+    <div class="rating-star"
+    [attr.data-rating]="rating"
+    [attr.data-chekdId]="checkedId"
+    >
+      <button *ngFor="let rate of rateScore" [attr.data-value]="rate" class="star" [class.star-on]="rate <= rating"
+        (click)="rateFilm($event.target, rate, moviePoster.id, userToMovieId)"></button>
+    </div>
+    <div class="movie-poster-button">
+      <a class="add-button want2see-movie" [class.active]="want" (click)="WantMovie(moviePoster.id, userToMovieId ,want)">보고싶어요</a>
+      <a class="add-button comment" [class.active]="comment" (click)="openDialog(moviePoster)">코멘트남기기</a>
+    </div>
+  </div>
+</div>

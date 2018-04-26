@@ -1,0 +1,39 @@
+<ul class="list-movie" data-position="0">
+  <!-- boxOffice객체의 정보로 DOM을 그림.  -->
+  <li class="card" *ngFor="let movie of moviePosters; let i = index">
+    <movie-poster [moviePoster]="movie"></movie-poster>
+    <div class="comment-box">
+      <a href="">
+        <h3 class="movie-title">{{movie.title_ko}}</h3>
+      </a>
+      <div class="movie-info">
+        <div class="inforamtion">
+          <span class="eng-title">{{movie.title_en}}</span>
+        </div>
+        <div class="inforamtion">
+          <span class="genre">{{movie.genre[0].genre}}</span> <span class="running-time">{{movie.running_time}}분</span>
+        </div>
+      </div>
+      <div class="rating-star">
+        <button *ngFor="let item of rateScore" data-value="{{ item }}" class="star" [class.star-on]="item <= movie.commented_user.rating"></button>
+      </div>
+      <p class="user-comment">
+        {{movie.commented_user.comment}}
+      </p>
+      <p class="date">
+        <!-- {{movie.commentDate.year}}년 {{movie.commentDate.month}}월 {{movie.commentDate.day}}일 -->
+      </p>
+      <div class="btn-action">
+        <!-- <button class="action-like" title="이 코멘트 추천하기"></button> -->
+        <!-- <span class="like-count">{{movie.likeCnt}}</span> -->
+        <!-- <button class="action-report" title="이 코멘트 신고하기"></button> -->
+      </div>
+      <i class="comment-more">
+        <ul>
+          <li><a href="" class="edit">수정하기</a></li>
+          <li><a href="" class="delete">삭제하기</a></li>
+        </ul>
+      </i>
+    </div>
+  </li>
+</ul>

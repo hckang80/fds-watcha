@@ -1,0 +1,35 @@
+@import '../../variables.scss';
+
+.main-content {
+  .inner {
+    height: auto;
+  }
+}
+:host ::ng-deep {
+  .outer {
+    margin-top: 80px;
+  }
+  .list-movie {
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  }
+}
+.user-watched {
+  position: fixed;
+  z-index: 10;
+  width: 1200px;
+  top: 60px;
+  padding-top: 30px;
+  text-align: center;
+  font-size: 2rem;
+  color: $global-color;
+  background: #e5e5e5;
+
+  .count-bar {
+      width: 0;
+      height: 10px;
+      background: $global-color;
+      margin: 20px 10px 0;
+      transition: all .5s ease;
+  }
+}

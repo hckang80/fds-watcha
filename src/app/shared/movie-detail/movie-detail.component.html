@@ -1,0 +1,197 @@
+<div class="movie-detail" (click)="movieDetailService.close($event.target)">
+  <!-- <span class="dim"></span> -->
+  <div class="inner">
+    <div class="head">
+      <div class="still-cut">
+        <ul>
+          <li 
+            *ngFor="let stillCut of movieDetailService.movie.still_cuts; let i = index;"
+            [style.transition]="getTransition(i)"
+            [style.opacity]="getOpacity(i)"
+            [style.z-index]="getZIndex(i)"
+            [style.background-image]="'url(' + stillCut.still_img + ')'">
+          </li>
+        </ul>
+        <button class="prev"><i class="icon-left-open-big" (click)="nextMovie('left')"></i> 이전 스틸컷 보기</button>
+        <button class="next"><i class="icon-right-open-big" (click)="nextMovie('right')"></i>다음 스틸컷 보기</button>
+      </div>
+      
+      <div class="main-info">
+        <div class="poster"><span><img src="{{ movieDetailService.movie.poster_image_m }}" alt=""></span></div>
+        <div class="con-right">
+          <div class="score">
+            <!-- <dl>
+              <dt>예상별점</dt>
+              <dd>{{ movieDetailService.movie.rating_avg }}</dd>
+            </dl> -->
+            <dl *ngIf="movieDetailService.movie.ticketing_rate">
+              <dt>예매율</dt>
+              <dd><em class="num">{{ movieDetailService.movie.ticketing_rate }}%</em></dd>
+            </dl>
+            <dl>
+              <dt>누적관객수</dt>
+              <dd>{{ movieDetailService.movie.audience | commasNumbers }}</dd>
+            </dl>
+            <dl>
+              <dt>개봉일</dt>
+              <dd>{{ movieDetailService.movie.d_day | dDayPrint }}</dd>
+            </dl>
+          </div>
+          <article class="detail">
+            <div class="movie">
+              <h2>{{ movieDetailService.movie.title_ko }}</h2>
+              <div class="info">
+                {{ movieDetailService.movie.title_en }}, 
+                {{ movieDetailService.movie.d_day }}, 
+                {{ movieDetailService.movie.nation | nationPrint }},
+                <ng-container *ngFor="let genre of movieDetailService.movie.genre">{{ genre.genre }}, </ng-container>
+                {{ movieDetailService.movie.film_rate | filmRatePrint }},
+                {{ movieDetailService.movie.running_time }}분
+              </div>
+              <!-- <div class="info">
+                <div class="star-ui">
+                  <span class="on"></span>
+                  <span class="on"></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <span class="al-middle">3.1 ({{ movieDetailService.movie.movie_checking_data.length }}명 참여)</span>
+              </div> -->
+            </div>
+            <div class="favorite">
+              <span><i class="icon-star"></i> {{ movieDetailService.movie.movie_eval_info.rating_cnt }}</span>
+              <span><i class="icon-heart"></i> {{ movieDetailService.movie.movie_eval_info.want_movie_cnt }}</span>
+              <span><i class="icon-comment"></i> {{ movieDetailService.movie.movie_eval_info.comment_cnt }}</span>
+            </div>
+            <div class="chart">Chart API</div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="sub-info">
+        <div class="con-left">
+          <section class="section-story">
+            <h3 class="title">줄거리</h3>
+            <div class="cont">
+              <p>{{ movieDetailService.movie.intro }}</p>
+            </div>
+          </section>
+
+          <section class="section-comment">
+            <h3 class="title">코멘트 <span class="sub-txt">({{ movieDetailService.movie.movie_checking_data.length }})</span></h3>
+            <div class="cont">
+              <div class="item" *ngFor="let comment of movieDetailService.movie.movie_checking_data">
+                <div class="photo"><img src="{{ comment.user.img_profile }}" alt=""></div>
+                <div class="wrap">
+                  <div class="want-movie" *ngIf="comment.user_want_movie">이 영화를 보고싶어요</div>
+                  <div class="want-movie" *ngIf="!comment.user_want_movie">이 영화에 관심없어요</div>
+                  <div class="star-ui" [attr.data-value]="comment.rating">
+                    <span 
+                      *ngFor="let star of movieDetailService.starRate" 
+                      [attr.data-value]="star" 
+                      [class.on]="star <= comment.rating">
+                    </span>
+                  </div>
+                  <div class="name">{{ comment.user.nickname }}</div>
+                  <p class="comment">{{ comment.comment }}</p>
+                  <div class="btm">
+                    <span class="time">{{ comment.modified_date | modifiedDatePrint }}</span>
+                    <!-- <span class="like">좋아요 34</span>
+                    <span class="event">
+                      <button>부적절한 표현 신고하기</button>
+                      <button>스포일러 신고하기</button>
+                    </span> -->
+                  </div>
+                </div>
+              </div>
+              <!-- <button class="btn-more">더보기</button> -->
+            </div>
+          </section>
+
+          <!-- <section class="section-movie">
+            <h3 class="title">비슷한 영화</h3>
+            <div class="cont">
+              영화 리스트
+              <button class="btn-more">더보기</button>
+            </div>
+          </section> -->
+        </div>
+        <div class="con-right">
+          <section>
+            <h3 class="title">예고편</h3>
+            <div class="cont">
+              <ul class="list-preview">
+                <li *ngFor="let youtube of movieDetailService.movie.trailer_youtube">
+                  <a href="{{ youtube.get_trailer_url }}" target="_blank"><img src="{{ youtube.url_thumbnail }}" alt="{{ youtube.title }}"></a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="title">감독</h3>
+            <div class="cont">
+              <ul class="list-person">
+                <li *ngFor="let member of movieDetailService.movie.movie_member_list | membersFilter: 'director'">
+                  <a 
+                    (click)="movieDetailDialogService.movieDetail(member.member.id)"
+                    [style.background-image]="'url(' + member.member.img_profile + ')'">
+                    <dl>
+                      <dt>{{ member.member.name }}</dt>
+                      <dd>{{ member.role_name }}</dd>
+                    </dl>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="title">주연</h3>
+            <div class="cont">
+              <ul class="list-person">
+                <li *ngFor="let member of movieDetailService.movie.movie_member_list | membersFilter: 'leadingRole'">
+                  <a 
+                    (click)="movieDetailDialogService.movieDetail(member.member.id)"
+                    [style.background-image]="'url(' + member.member.img_profile + ')'">
+                    <dl>
+                      <dt>{{ member.member.name }}</dt>
+                      <dd>{{ member.role_name }}</dd>
+                    </dl>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="title">조연</h3>
+            <div class="cont">
+              <ul class="list-person">
+                <li *ngFor="let member of movieDetailService.movie.movie_member_list | membersFilter: 'SupportingRole'">
+                  <a 
+                    (click)="movieDetailDialogService.movieDetail(member.member.id)"
+                    [style.background-image]="'url(' + member.member.img_profile + ')'">
+                    <dl>
+                      <dt>{{ member.member.name }}</dt>
+                      <dd>{{ member.role_name }}</dd>
+                    </dl>
+                  </a>
+                </li>
+              </ul>
+              <!-- <button class="btn-more">더보기</button> -->
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

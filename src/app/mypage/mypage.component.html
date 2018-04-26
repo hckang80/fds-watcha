@@ -1,0 +1,72 @@
+<div class="wrapper">
+  <app-header></app-header>
+
+  <ng-container *ngIf="myPageUser">
+    <main class="layout-container" style="margin-top:0;padding-top:0;">
+      <div class="my-page">
+        <div class="my-head">
+          <div class="inner-guide">
+            <div class="my-movie">
+              <div class="my">
+                <div class="photo">
+                  <img src="{{ myPageUser.img_profile }}" alt="">
+                </div>
+                <span class="name">{{ myPageUser.nickname }}</span>
+              </div>
+              <ul class="my-infor">
+                <li class="total-movies">
+                  <span class="count">{{ commentListCount }}</span>
+                  <span class="text">코멘트</span>
+                </li>
+                <li class="watched-hours">
+                  <i class="icon-clock"></i>
+                  <span class="count">{{ myPageUser.total_running_time }}</span>
+                  <span class="text">영화 본 시간</span>
+                </li>
+                <!-- <li class="received-likes">
+                  <i class="icon-thumbs-up"></i>
+                  <span class="count">0</span>
+                  <span class="text">받은 좋아요</span>
+                </li> -->
+                <li class="received-likes">
+                  <i class="icon-thumbs-up"></i>
+                  <span class="count">{{ watchedMoviesCount }}</span>
+                  <span class="text">봤어요</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        <div class="navigation">
+          <div class="inner-guide">
+            <div class="con-left">
+              <div class="nav">
+                <a routerLink="/mypage/userTaste" routerLinkActive="current">취향통계분석</a>
+                <a routerLink="/mypage/wishlist" routerLinkActive="current">보고싶어요 {{ wishlistCount }}</a>
+                <a routerLink="/mypage/Watched" routerLinkActive="current">봤어요 {{ watchedMoviesCount }}</a>
+                <a routerLink="/mypage/comments" routerLinkActive="current">코멘트 {{ commentListCount }}</a>
+              </div>
+            </div>
+            <!-- <div class="con-right">
+              <div class="nav">
+                <a href="#">팔로잉</a>
+                <a href="#" class="share">
+                  <i class="icon-export"></i> 공유하기</a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="content">
+          <div class="inner-guide mypage">
+            <router-outlet>
+              <preloader></preloader>
+            </router-outlet>
+          </div>
+        </div>
+      </div>
+    </main>
+  </ng-container>
+
+  <main-footer></main-footer>
+</div>

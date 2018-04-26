@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <app-header></app-header>
+
+  <main class="layout-container">
+    <section class="inner-guide">
+      <h3 class="main-title">입력하신
+        <span class="search-title">{{ search.getMovieTitle }}</span>
+        의 결과입니다.
+      </h3>
+      <div class="search-tab-wapper">
+        <a class="tab-movie" href="">영화
+          <span class="count">({{ search.getCount }}개)</span>
+        </a>
+      </div>
+      <preloader></preloader>
+        <ul class="list-movie">
+          <li *ngFor="let moviePoster of this.search.moviePosters ; let i = index">
+            <movie-poster [moviePoster]="moviePoster" [posterSmall]="flag"></movie-poster>
+            <div class="search-result">
+              <a class="search-title" href="#">{{ moviePoster.title_ko }}</a>
+              <br> {{ moviePoster.movie_created_date }}
+            </div>
+            <div class="search-summury">
+              <br> 원제: {{ moviePoster.title_en }}
+              <br> 감독: {{ moviePoster.director }}
+              <br> 배우: {{ moviePoster.main_actor }}
+            </div>
+          </li>
+        </ul>
+    </section>
+  </main>
+
+  <main-footer></main-footer>
+</div>
+
+
+

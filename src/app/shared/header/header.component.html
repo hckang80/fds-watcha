@@ -1,0 +1,52 @@
+<div class="layout-header" [class.transparent]="state&&(this.router.url==='/home' || this.router.url==='/mypage')">
+  <div class="inner-guide">
+    <header class="main-header">
+      <ul class="gnb">
+        <li>
+          <a routerLink="/" class="home">
+            <img src="../../../assets/images/main-logo.png" alt="홈으로">
+          </a>
+        </li>
+        <li><a routerLinkActive="active" routerLink="/boxoffice" class="boxoffice">박스오피스</a></li>
+        <li><a routerLinkActive="active" routerLink="/recommendation" class="recommend">추천영화</a></li>
+        <li><a routerLinkActive="active" routerLink="/evalmore" class="add-archive">평가늘리기</a></li>
+      </ul>
+      <div class="search-area">
+        <input (keyup.enter)="moveToSearch(searchString)" type="text" class="search-bar" [(ngModel)]="searchString" (focusin)="resultState=true" (keyup)="moveFocus($event)" (focusout)="closeResult($event)">
+        <div class="search-result" *ngIf="resultState">
+          <ul class="search-result-list">
+            <li>영화</li>
+            <a routerLink="/search" (click)="moveToSearch(searchString)"  #searchResult1 *ngFor="let moviePoster of moviePosters; let i = index" (keyup)="moveFocus($event)">{{ searchString }}
+              <span class="w100 movie-poster">
+                <img src="{{ moviePoster.poster_image }}" alt="">
+              </span>
+            </a>
+            <li><a routerLink="/search" class="more-result">"{{ searchString }}" 검색결과 더보기</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="user-menu">
+        <div class="name">
+          {{ nickName }}
+          <span class="user-avator w100">
+            <!-- <img src="../../../assets/images/user-avatar-100.jpg" alt=""> -->
+          </span>
+          <ul class="menu-list">
+            <li>
+              <a routerLink="/mypage">영화보관함
+                <span class="count-archive">1</span>
+              </a>
+            </li>
+            <li>
+              <a (click)="modifyProfile()">설정</a>
+            </li>
+            <li>
+              <a routerLink="/intro" (click)="signout()">로그아웃</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>

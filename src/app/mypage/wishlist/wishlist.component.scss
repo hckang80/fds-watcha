@@ -1,0 +1,20 @@
+@import '../../../variables';
+
+.list-movie {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    width: 960px;
+    li {
+    width: 25%;
+    }
+}
+:host ::ng-deep {
+  .poster-type .hidden-layer.rated {
+    display: none;
+  }
+  .poster-type {
+    &:hover .hidden-layer {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,602 @@
+{
+  "boxoffice": [
+    { "ranking": 1, "title": "레디 플레이어 ", "link": "#" },
+    { "ranking": 2, "title": "지암", "link": "#" },
+    { "ranking": 3, "title": "바람 바람 바람", "link": "#" },
+    { "ranking": 4, "title": "지금 만나러 니다", "link": "#" },
+    { "ranking": 5, "title": "레이디 버드", "link": "#" },
+    { "ranking": 6, "title": "7년의 밤", "link": "#" },
+    { "ranking": 7, "title": "덕구", "link": "#" },
+    { "ranking": 8, "title": "콜미 바이 유어 네임", "link": "#" },
+    { "ranking": 9, "title": "펜텀 스레드", "link": "#" },
+    { "ranking": 10, "title": "머니백", "link": "#" },
+    { "ranking": 11, "title": "양의 나무", "link": "#" },
+    { "ranking": 12, "title": "50가지 그림자: 해방", "link": "#" },
+    { "ranking": 13, "title": "문호 스트레이독스", "link": "#" },
+    { "ranking": 14, "title": "오늘밤, 로멘스 극장에서", "link": "#" },
+    { "ranking": 16, "title": "내 이야기!!!", "link": "#" },
+    { "ranking": 17, "title": "소공녀", "link": "#" },
+    { "ranking": 18, "title": "레드 스패로", "link": "#" },
+    { "ranking": 19, "title": "라이프 오브 파이", "link": "#" }
+  ],
+  "moviecategory": [
+    { "id": 1, "category": "역대 100만 관객 돌파 영화", "active": true },
+    { "id": 2, "category": "왓챠 평균 별점 TOP 영화", "active": false },
+    { "id": 3, "category": "전세계 흥행 TOP 영화", "active": false },
+    { "id": 4, "category": "국내 누적관객수 TOP 영화", "active": false },
+    { "id": 5, "category": "전문가 고평점 영화", "active": false },
+    { "id": 6, "category": "저예산 독립 영화", "active": false },
+    { "id": 7, "category": "고전 영화", "active": false },
+    { "id": 8, "category": "느와르 영화", "active": false },
+    { "id": 9, "category": "슈퍼 히어로 영화", "active": false },
+    { "id": 10, "category": "스포츠 영화", "active": false },
+    { "id": 11, "category": "범죄", "active": false },
+    { "id": 12, "category": "드라마", "active": false },
+    { "id": 13, "category": "코미디", "active": false }
+  ],
+  "movieposter": [
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "poster_image": "../../assets/images/readyplayone.jpg",
+      "year": 2018,
+      "title": "Ready Player One",
+      "director": "스티븐 스필버그",
+      "actor": "타이 셰리던, 올리비아 쿡, 벤 멘델슨"
+    },
+    {
+      "movieNm": "바람 바람 바람",
+      "rate": 0,
+      "poster_image": "../../assets/images/windwindwind.jpg",
+      "year": 2017,
+      "title": "What a Man Wants",
+      "director": "이병헌",
+      "actor": "이성민, 신하균, 송지효, 이엘"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "poster_image": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "poster_image": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "poster_image": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "poster_image": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "poster_image": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "poster_image": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "poster_image": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "poster_image": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    }
+  ],
+  "user": {
+    "wishlist": [
+      {
+        "movieNm": "바람 바람 바람",
+        "rate": 0,
+        "poster_image": "../../assets/images/windwindwind.jpg",
+        "year": 2017,
+        "title": "What a Man Wants",
+        "director": "이병헌",
+        "actor": "이성민, 신하균, 송지효, 이엘"
+      },
+      {
+        "movieNm": "곤지암",
+        "rate": 0,
+        "poster_image": "../../assets/images/gonjiam.jpg",
+        "year": 2018,
+        "title": "곤지암",
+        "director": "정범식",
+        "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+      },
+      {
+        "movieNm": "지금 만나러 갑니다",
+        "rate": 0,
+        "poster_image": "../../assets/images/bewithyou.jpg",
+        "year": 2017,
+        "title": "지금 만나러 갑니다",
+        "director": "이장훈",
+        "actor": "소지섭, 손예진"
+      },
+      {
+        "movieNm": "레디플레이어 원",
+        "rate": 0,
+        "poster_image": "../../assets/images/readyplayone.jpg",
+        "year": 2018,
+        "title": "Ready Player One",
+        "director": "스티븐 스필버그",
+        "actor": "타이 셰리던, 올리비아 쿡, 벤 멘델슨"
+      },
+      {
+        "movieNm": "바람 바람 바람",
+        "rate": 0,
+        "poster_image": "../../assets/images/windwindwind.jpg",
+        "year": 2017,
+        "title": "What a Man Wants",
+        "director": "이병헌",
+        "actor": "이성민, 신하균, 송지효, 이엘"
+      },
+      {
+        "movieNm": "곤지암",
+        "rate": 0,
+        "poster_image": "../../assets/images/gonjiam.jpg",
+        "year": 2018,
+        "title": "곤지암",
+        "director": "정범식",
+        "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+      }
+    ],
+    "watched": [
+      {
+        "movieNm": "지금 만나러 갑니다",
+        "rate": 1,
+        "poster_image": "../../assets/images/bewithyou.jpg",
+        "year": 2017,
+        "title": "지금 만나러 갑니다",
+        "director": "이장훈",
+        "actor": "소지섭, 손예진",
+        "index": 1
+      },
+      {
+        "movieNm": "레디플레이어 원",
+        "rate": 0,
+        "poster_image": "../../assets/images/readyplayone.jpg",
+        "year": 2018,
+        "title": "Ready Player One",
+        "director": "스티븐 스필버그",
+        "actor": "타이 셰리던, 올리비아 쿡, 벤 멘델슨"
+      },
+      {
+        "movieNm": "바람 바람 바람",
+        "rate": 0,
+        "poster_image": "../../assets/images/windwindwind.jpg",
+        "year": 2017,
+        "title": "What a Man Wants",
+        "director": "이병헌"
+      },
+      {
+        "movieNm": "곤지암",
+        "rate": 0,
+        "poster_image": "../../assets/images/gonjiam.jpg",
+        "year": 2018,
+        "title": "곤지암",
+        "director": "정범식",
+        "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+      },
+      {
+        "movieNm": "그날, 바다",
+        "rate": 0,
+        "poster_image": "../../assets/images/Intention.jpg",
+        "year": 2018,
+        "title": "Intention",
+        "director": "김지영",
+        "actor": "정우성"
+      },
+      {
+        "movieNm": "지금 만나러 갑니다",
+        "rate": 0,
+        "poster_image": "../../assets/images/bewithyou.jpg",
+        "year": 2017,
+        "title": "지금 만나러 갑니다",
+        "director": "이장훈",
+        "actor": "소지섭, 손예진"
+      },
+      {
+        "movieNm": "레디플레이어 원",
+        "rate": 0,
+        "poster_image": "../../assets/images/readyplayone.jpg",
+        "year": 2018,
+        "title": "Ready Player One",
+        "director": "스티븐 스필버그",
+        "actor": "타이 셰리던, 올리비아 쿡, 벤 멘델슨"
+      },
+      {
+        "movieNm": "바람 바람 바람",
+        "rate": 0,
+        "poster_image": "../../assets/images/windwindwind.jpg",
+        "year": 2017,
+        "title": "What a Man Wants",
+        "director": "이병헌"
+      },
+      {
+        "movieNm": "곤지암",
+        "rate": 0,
+        "poster_image": "../../assets/images/gonjiam.jpg",
+        "year": 2018,
+        "title": "곤지암",
+        "director": "정범식",
+        "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+      }
+    ],
+    "comment": [
+      {
+      "movieNm": "레디플레이어 원",
+      "rate": 5,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_700,q_80,w_490/v1521617852/guetszfm472lbu0ypxp2.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 3,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 1,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    },
+    {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "genre": "드라마",
+      "runtime": 116,
+      "movieDate": 2018,
+      "likeCnt": 1,
+      "comment": "재밌네요",
+      "commentDate": {
+        "year": 2018,
+        "month": 4,
+        "day": 1
+      },
+      "poster_image":
+        "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1519955226/vvnr4dqs6rxnxbc4mgvq.jpg"
+    }
+    ]
+  },
+  "category": {
+    "classic" : [
+      {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "posterUrl": "../../assets/images/readyplayone.jpg",
+      "year": 2018,
+      "title": "Ready Player One",
+      "director": "스티븐 스필버그",
+      "actor": "타이 셰리던, 올리비아 쿡, 벤 멘델슨"
+    },
+    {
+      "movieNm": "바람 바람 바람",
+      "rate": 0,
+      "posterUrl": "../../assets/images/windwindwind.jpg",
+      "year": 2017,
+      "title": "What a Man Wants",
+      "director": "이병헌",
+      "actor": "이성민, 신하균, 송지효, 이엘"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "posterUrl": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    }
+    ],
+    "noir" : [
+      {
+        "movieNm": "바람 바람 바람",
+        "rate": 0,
+        "posterUrl": "../../assets/images/windwindwind.jpg",
+        "year": 2017,
+        "title": "What a Man Wants",
+        "director": "이병헌",
+        "actor": "이성민, 신하균, 송지효, 이엘"
+      },
+      {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "posterUrl": "../../assets/images/readyplayone.jpg",
+      "year": 2018,
+      "title": "Ready Player One",
+      "director": "스티븐 스필버그",
+      "actor": "타이 셰리던, 올리비아 쿡, 벤 멘델슨"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "posterUrl": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    }
+    ],
+    "hero":
+      [
+      {
+      "movieNm": "레디플레이어 원",
+      "rate": 0,
+      "posterUrl": "../../assets/images/readyplayone.jpg",
+      "year": 2018,
+      "title": "Ready Player One",
+      "director": "스티븐 스필버그",
+      "actor": "타이 셰리던, 올리비아 쿡, 벤 멘델슨"
+    },
+    {
+      "movieNm": "곤지암",
+      "rate": 0,
+      "posterUrl": "../../assets/images/gonjiam.jpg",
+      "year": 2018,
+      "title": "곤지암",
+      "director": "정범식",
+      "actor": "위하준, 박지현, 오아연, 문예원, 박성훈, 유제윤"
+    },
+    {
+      "movieNm": "바람 바람 바람",
+      "rate": 0,
+      "posterUrl": "../../assets/images/windwindwind.jpg",
+      "year": 2017,
+      "title": "What a Man Wants",
+      "director": "이병헌",
+      "actor": "이성민, 신하균, 송지효, 이엘"
+    }
+    ]
+
+  }
+}

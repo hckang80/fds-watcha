@@ -1,3 +1,43 @@
-<p>
-  visual works!
-</p>
+  <div class="main-slider">
+    <ul class="body">
+      <li 
+        *ngFor="let movie of movies; let i = index"
+        [class.active]="i === 0" 
+        [style.transition]="getTransition(i)"
+        [style.opacity]="getOpacity(i)"
+        [style.z-index]="getZIndex(i)"
+        [style.background-image]="'url(' + movie.still_cuts[0].still_img + ')'"
+      >
+        <div class="inner-guide">
+          <div class="information">
+            <div class="today">오늘의 박스오피스</div>
+            <dl>
+              <dt>{{ movie.title_ko }}</dt>
+              <dd>평균 별점 : {{ movie.rating_avg }} , 예매율 : {{ movie.ticketing_rate }}%
+                <br>
+                  {{ movie.title_en }},
+                  {{ movie.nation | nationPrint }}, 
+                  <ng-container *ngFor="let genre of movie.genre">{{ genre.genre }}, </ng-container>
+                  {{ movie.film_rate | filmRatePrint }}, 
+                  {{ movie.running_time }}분
+                <br>
+                  감독 : <ng-container *ngFor="let member of movie.movie_member_list | membersFilter: 'director'">{{ member.member.name }},</ng-container>
+                  배우 :
+                  <ng-container 
+                    *ngFor="let member of movie.movie_member_list | membersFilter: 'leadingRole'; let i = index">
+                    <ng-container *ngIf="i < 5">{{ member.member.name }}</ng-container>
+                  </ng-container>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="each">
+      <span *ngFor="let movie of sliderItem; let i = index" data-id="{{ i }}" [class.current]="i === 0" (click)="selectMovie(i)"></span>
+    </div>
+    <div class="arrow">
+      <button class="prev"><i class="icon-left-open-big" (click)="nextMovie('left')"></i>이전 작품 보기</button>
+      <button class="next"><i class="icon-right-open-big" (click)="nextMovie('right')"></i>다음 작품 보기</button>
+    </div>
+  </div>

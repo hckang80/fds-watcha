@@ -1,0 +1,146 @@
+.my-head {
+  background-image: url("../../assets/images/avengers.jpg");
+  background-size: cover;
+  height: 320px;
+  padding: 130px 0 0;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+}
+
+.my-movie {
+  position: relative;
+  width: 200px;
+  margin: 50px 0 0;
+  margin: 0 auto;
+  white-space: nowrap;
+  font-size: 1.8rem;
+  .photo {
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 100%;
+    background: url('../../assets/images/bg-photo.png') no-repeat;
+    background-size: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .name {
+    display: block;
+    margin: 8px 0 0;
+  }
+}
+
+.my-infor {
+  li {
+    position: absolute;
+  }
+  .text {
+    display: block;
+    font-size: 1.1rem;
+    opacity: .5;
+  }
+}
+
+.total-movies {
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  margin: 0 0 30px;
+}
+
+.watched-hours {
+  left: 0;;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 30px 0 0;
+}
+
+.received-likes {
+  right: 0;;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 0 0 30px;
+}
+
+.navigation {
+  line-height: 50px;
+  background: #f0f0f0;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  font-weight: 700;
+  font-size: 1.4rem;
+  .con-left {
+    float: left;
+  }
+
+  .nav {
+    display: table;
+    a {
+      display: table-cell;
+      position: relative;
+      padding: 0 15px;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-bottom: 0 solid #ff382e;
+        transition: border-bottom .1s ease-in-out;
+      }
+      &:hover {
+        &::before {
+          border-bottom-width: 5px;
+        }
+      }
+    }
+    a.current {
+      border-left: 1px solid #e0e0e0;
+      border-right: 1px solid #e0e0e0;
+      color: #333;
+      &::before {
+        border-bottom-width: 5px;
+      }
+    }
+    a.share {
+      color: #8593eb;
+    }
+  }
+
+  .con-right {
+    float: right;
+  }
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.inner-guide {
+  width: 960px;
+}
+.mypage {
+  width: 960px;
+}
+
+.content {
+  padding: 30px 0;
+}
+:host ::ng-deep {
+  app-user-taste,
+  app-wishlist,
+  app-watched-movies,
+  app-comments {
+    animation: fadein .3s 0s 1 linear alternate;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

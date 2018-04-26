@@ -1,0 +1,14 @@
+export * from '../home/home.component';
+export * from '../intro/intro.component';
+export * from '../login/login.component';
+export * from '../join/join.component';
+export * from '../search/search.component';
+export * from '../boxoffice/boxoffice.component';
+export * from '../evalmore/evalmore.component';
+export * from '../recommendation/recommendation.component';
+export * from '../mypage/mypage.component';
+export * from '../mypage/user-taste/user-taste.component';
+export * from '../mypage/watched-movies/watched-movies.component';
+export * from '../mypage/comments/comments.component';
+export * from '../mypage/wishlist/wishlist.component';
+// export * from './not-found.component';

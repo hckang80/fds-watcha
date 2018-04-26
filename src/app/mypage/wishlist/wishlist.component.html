@@ -1,0 +1,8 @@
+
+    <ul class="list-movie">
+      <li *ngFor="let moviePoster of moviePosters ; let i = index">
+        <div class="poster-type">
+          <movie-poster [moviePoster]="moviePoster"></movie-poster>
+        </div>
+      </li>
+    </ul>

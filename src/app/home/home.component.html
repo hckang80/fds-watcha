@@ -1,20 +1,19 @@
 <div class="wrapper">
-  <div class="layout-header">
-    <div class="inner-guide">
-      header
-    </div>
-  </div>
+  <app-header></app-header>
 
-  <main class="layout-container">
+  <main class="layout-container" style="margin-top:0;padding-top:0;">
+    <visual></visual>
+
     <div class="inner-guide">
       <div class="main-content">
-        <section class="box-office">
-          <h3>오늘의 BOX OFFICE</h3>
+        <section class="main-section box-office">
+          <h3 class="main-title">오늘의 BOX OFFICE</h3>
           <div class="body">
             <div class="outer">
               <div class="inner">
                 <div class="conLeft">
-                  <section class="ranking-area">
+                  <box-office-ranking></box-office-ranking>
+                  <!-- <section class="ranking-area">
                     <h4 class="title">영화 랭킹</h4>
                     <ol>
                       <li>
@@ -24,7 +23,7 @@
                         <a href="#">곤지암</a>
                       </li>
                     </ol>
-                  </section>
+                  </section> -->
                 </div>
                 <div class="conRight">
                   <today-box-office></today-box-office>
@@ -32,33 +31,19 @@
               </div>
             </div>
             <div class="btn-group">
-              <button class="prev">이전</button>
-              <button class="next">다음</button>
+              <button class="icon-left-open-big"  (click)="moveTo('today-box-office', 'prev')" *ngIf="prevBtnShowBoxOffice"></button>
+              <button class="icon-right-open-big" (click)="moveTo('today-box-office', 'next')" *ngIf="nextBtnShowBoxOffice"></button>
             </div>
           </div>
         </section>
 
-        <section class="enum-movies">
-          <h3>여태 살면서 나는 영화를 몇편이나 봤을까?</h3>
+        <section class="main-section enum-movies">
+          <h3 class="main-title">여태 살면서 나는 영화를 몇편이나 봤을까?</h3>
           <div class="body">
             <div class="outer">
               <div class="inner">
                 <div class="conLeft">
-                  <section class="theme-area">
-                    <h4 class="skip">테마별 영화</h4>
-                    <ul>
-                      <li>
-                        <a href="#" class="current">
-                          <span>역대 100만 관객 돌파 영화</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <span>왓챠 평균별점 TOP 영화</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </section>
+                  <movie-category [movieListLength]="movieListLength" [page]="page"></movie-category>
                 </div>
                 <div class="conRight">
                   <my-movies></my-movies>
@@ -66,14 +51,14 @@
               </div>
             </div>
             <div class="btn-group">
-              <button class="prev">이전</button>
-              <button class="next">다음</button>
+              <button class="icon-left-open-big"  (click)="moveTo('my-movies', 'prev')" *ngIf="prevBtnShowMyMovies"></button>
+              <button class="icon-right-open-big" (click)="moveTo('my-movies', 'next')" *ngIf="nextBtnShowMyMovies"></button>
             </div>
           </div>
         </section>
-
-        <section class="new-movies">
-          <h3>왓챠플레이 신작 &amp; 박스오피스 신작</h3>
+        <preloader></preloader>
+        <!-- <section class="main-section new-movies">
+          <h3 class="main-title">왓챠플레이 신작 &amp; 박스오피스 신작</h3>
           <div class="body">
             <div class="outer">
               <div class="inner">
@@ -90,16 +75,24 @@
               <button class="next">다음</button>
             </div>
           </div>
+        </section> -->
+        <section class="main-section theme-recommend">
+          <h3 class="main-title">장르별 추천</h3>
+          <div class="body">
+            <div class="outer">
+              <div class="inner">
+                <theme-movies [themeMovies]="themeMovieList"></theme-movies>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button class="icon-left-open-big" (click)="moveTo('theme-movies', 'prev')" *ngIf="prevBtnShowTheme"></button>
+              <button class="icon-right-open-big" (click)="moveTo('theme-movies', 'next')" *ngIf="nextBtnShowTheme"></button>
+            </div>
+          </div>
         </section>
-
-        <theme-movies></theme-movies>
       </div>
     </div>
   </main>
 
-  <div class="layout-footer">
-    <div class="inner-guide">
-      footer
-    </div>
-  </div>
+  <main-footer></main-footer>
 </div>

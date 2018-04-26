@@ -1,0 +1,31 @@
+.logo {
+  width: 116px;
+  height: 19px;
+  margin-bottom: 70px;
+  background: url("../../../assets/images/footer-logo.png");
+  background-size: cover;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.star-count {
+  padding-left: 30px;
+  font-size: 1.4rem;
+  height: 28px;
+  line-height: 28px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/240px-Gold_Star.svg.png);
+  background-size: 28px 28px;
+  background-repeat: no-repeat;
+  .social-btn img{
+    vertical-align: middle;
+  }
+}
+
+.info {
+  font-size: 1.2rem;
+}
+
+.legal {
+  font-size: 1.4rem;
+  font-weight: bold;
+}

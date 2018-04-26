@@ -1,4 +1,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');
+@import url('./fontello.css');
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /* reset */
 html, body, div, span, applet, object, iframe,
@@ -26,21 +29,27 @@ time, mark, audio, video {
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 html {
   font-size: 10px;
 }
 
 body {
-  font-family: 'Apple SD Gothic Neo', '맑은 고딕', 'Malgun Gothic', '돋움', dotum, '굴림', sans-serif;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Gothic', '맑은 고딕', 'Malgun Gothic', '돋움', dotum, '굴림', sans-serif;
   font-size: 1.3rem;
   background: #e5e5e5;
   color: #666;
   letter-spacing: -1px;
+  min-width: 1200px;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
@@ -66,7 +75,7 @@ ul {
   list-style: none;
 }
 
-.skip {
+.skip, legend {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -74,19 +83,22 @@ ul {
   overflow: hidden;
 }
 
+.al-middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* layout */
+.wrapper {
+  min-width: 1200px;
+}
+
 .inner-guide {
   position: relative;
   width: 1200px;
   margin: 0 auto;
 }
 
-.layout-header {
-  background: #fff;
-  .inner-guide {
-    height: 60px;
-  }
-}
 
 .layout-container {
   margin: 60px 0 0;
@@ -100,7 +112,23 @@ ul {
   }
 }
 
+.conRight {
+  overflow: hidden;
+}
+
 .main-content {
+  .main-section {
+    margin: 30px 0 0;
+  }
+  .box-office {
+    margin-top: 0;
+  }
+  .main-title {
+    margin: 0 0 5px 10px;
+    font-weight: 800;
+    font-size: 2rem;
+    color: #333;
+  }
   .body {
     position: relative;
   }
@@ -113,19 +141,27 @@ ul {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 23px;
-      height: 42px;
-      &.prev {
-        left: -40px;
+      &.icon-left-open-big,
+      &.icon-right-open-big {
+        &:hover::before {
+          color: #000;
+        }
+        &::before {
+          font-size: 5rem;
+        }
       }
-      &.next {
-        right: -40px;
+
+      &.icon-left-open-big {
+        left: -60px;
+      }
+      &.icon-right-open-big {
+        right: -60px;
       }
     }
   }
   .inner {
     // transform: translateX(-100%);
-    height: 650px;
+    height: 670px;
     &::after {
       content: '';
       display: block;
@@ -143,6 +179,30 @@ ul {
   }
 }
 
+.star-ui {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  > span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 7px;
+    height: 13px;
+    background: url('./assets/images/star-off.svg') no-repeat;
+    background-size: 200%;
+    &:nth-child(odd) {
+
+    }
+    &:nth-child(even) {
+      margin: 0 2px 0 0;
+      background-position: 100% 0;
+    }
+    &.on {
+      background-image: url('./assets/images/star-on.svg');
+    }
+  }
+}
+
 .box-office {
   .conLeft {
     width: 20%;
@@ -151,27 +211,36 @@ ul {
     width: 80%;
   }
   .list-movie {
-    li {
+    > li {
       &:first-child {
+        .poster-type {
+          width: 100%;
+          height: 650px;
+        }
         width: 50%;
         height: 100%;
+        img {
+          width: 460px;
+        }
+      }
+      .wrap {
+        overflow: hidden;
+        border-radius: 5px;
       }
     }
   }
 }
 
-.ranking-area {
-  height: 100%;
-  background: #f83938;
-}
-
 .list-movie {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-content: flex-start;
   flex-flow: column wrap;
   height: 100%;
-  li {
+  transition: all .6s cubic-bezier(0.39, 0.58, 0.57, 1);
+  transform: translateX(0px);
+  > li {
     width: 25%;
     height: 50%;
     padding: 10px;
@@ -190,11 +259,6 @@ ul {
   .conRight {
     width: 80%;
   }
-}
-
-.theme-area {
-  height: 100%;
-  background: #fff;
 }
 
 .new-movies {
@@ -220,11 +284,11 @@ ul {
     padding: 14px 15px;
     border-bottom: 1px solid #eee;
   }
-  
+
   .head h3 {
     font-size: 1.6rem;
   }
-  
+
   .head .bbtn {
     position: absolute;
     right: 15px;
@@ -233,7 +297,7 @@ ul {
     transform: translateY(-50%);
     border: 1px solid #ccc;
   }
-  
+
   .head button {
     width: 23px;
     height: 23px;
@@ -241,38 +305,38 @@ ul {
     border: 0;
     color: #ccc;
   }
-  
+
   .head button.prev {
     border-right: 1px solid #ccc;
   }
-  
+
   .body {
     padding: 35px 15px;
   }
-  
+
   .body ul {
     overflow: hidden;
     height: 510px;
     list-style: none;
   }
-  
+
   .body li {
     position: relative;
   }
-  
+
   .body li+li {
     margin-top: 30px;
   }
-  
+
   .body dl {
     margin-left: 110px;
   }
-  
+
   .body dt {
     margin-bottom: 5px;
     font-size: 1.4rem;
   }
-  
+
   .body dd {
     overflow: hidden;
     display: -webkit-box;
@@ -280,7 +344,7 @@ ul {
     -webkit-line-clamp: 3;
     max-height: 4.5em;
   }
-  
+
   .body .thumb {
     position: absolute;
     left: 0;
@@ -288,7 +352,7 @@ ul {
     width: 100px;
     height: 80px;
   }
-  
+
   .body .thumb img {
     max-width: 100%;
   }
@@ -303,4 +367,368 @@ ul {
       width: 20%;
     }
   }
+  .transparent {
+    &:hover{
+        background-color:rgba(255, 131, 98, 0.5);
+        & > a {
+            opacity: 0.5;
+        }
+    }
+    > a {
+        display: block;
+        opacity: 0.9;
+        height: 150px;
+        background-size: cover;
+        text-align: center;
+        font-size: 1.8rem;
+        color: white;
+        text-shadow: 2px 2px #696969;
+        line-height: 150px;
+    }
+  }
+}
+.user-area {
+  height: 100%;
+  padding: 30px 0;
+  background: url('/assets/images/bg_login.jpg') no-repeat 50% 0;
+  background-size: cover;
+  .logo {
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+    h1 {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  .inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    margin: 0 auto;
+  }
+  .box {
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    background: #eee;
+    text-align: center;
+  }
+  h2 {
+    padding: 15px 20px;
+    background: #fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  .icon-btn {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 48px;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 5px;
+    font-weight: bold;
+    line-height: 48px;
+    .icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 48px;
+      font-size: 2rem;
+    }
+    .text {
+      padding: 0 0 0 48px;
+      font-size: 1.4rem;
+    }
+  }
+  .wrap {
+    padding: 20px 30px;
+    color: #aaa;
+    .input {
+      position: relative;
+      margin: 0 0 10px;
+      label {
+        display: none;
+      }
+      input {
+        width: 100%;
+        height: 48px;
+        padding: 0 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        &.ng-invalid.ng-touched {
+          border-color: #f00;
+        }
+      }
+    }
+    .submit {
+      width: 100%;
+      height: 48px;
+      background: linear-gradient(#ff8400, #ff7400);
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #fff;
+      border-radius: 5px;
+      &[disabled] {
+        background: #ddd;
+        cursor: default;
+      }
+    }
+    .error-msg {
+      margin: 10px 0 0;
+      color: #f00;
+    }
+    .txt-agree {
+      margin: 10px 0 0;
+      text-align: left;
+      label {
+        display: block;
+        position: relative;
+        + label {
+          margin: 5px 0 0;
+        }
+        input {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          &:checked + span {
+            &::before {
+              border-width: 5px;
+            }
+          }
+        }
+        > span {
+          display: block;
+          position: relative;
+          padding: 0 0 0 24px;
+          font-size: 1.2rem;
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 16px;
+            height: 16px;
+            background: #eee;
+            border: 1px solid #ff8400;
+            transition: .1s ease-in-out;
+          }
+          > em {
+            color: #333;
+          }
+        }
+      }
+    }
+    .mail {
+      margin: 20px 0 0;
+      background: linear-gradient(#ff8400, #ff7400);
+      .icon {
+        background: linear-gradient(#ff7000, #ff6000);
+      }
+      &[disabled] {
+        background: #ddd;
+        cursor: default;
+        .icon {
+          background: #cdcdcd;
+        }
+      }
+    }
+  }
+  .links {
+    margin: 20px 0 0;
+    > * {
+      display: inline-block;
+      line-height: 1.2;
+      border-bottom: 1px solid #aaa;
+    }
+  }
+  .box.bottom {
+    margin: 30px 0 0;
+    .notice {
+      display: block;
+      margin: 0 0 10px;
+    }
+    .fb {
+      background: linear-gradient(#569bf0, #468be9);
+      .icon {
+        background: linear-gradient(#4e91ed, #3d83e3);
+      }
+    }
+    .login {
+      display: block;
+      margin: 10px 0 0;
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.invalid-msg {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 100%;
+  white-space: nowrap;
+  margin: 0 0 4px;
+  padding: 1px 5px 2px;
+  background: #f00;
+  color: #fff;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: #f00;
+  }
+  transition: opacity 1s ease-in-out;
+}
+
+
+/* 영화 포스터 카드 */
+.poster-type {
+  position: relative;
+  overflow: hidden;
+  width: 220px;
+  &:hover .hidden-layer, .hidden-layer.rated {
+    display: block;
+  }
+  &:hover .movie-poster::before {
+      display: block;
+      content: "";
+      position: absolute;
+      height: 100%;
+      background: rgba(39, 39, 39, 0.38);
+      top: 0px;
+      width: 100%;
+  }
+
+  .movie-poster {
+    img {
+      vertical-align: top;
+    }
+    cursor: pointer;
+  }
+}
+.hidden-layer {
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background: white;
+  text-align: center;
+  .movie-name {
+    display:block;
+    padding: 10px 0px;
+  }
+}
+.rating-star {
+  margin: 15px 0px;
+}
+.star {
+  width: 14px;
+  height: 28px;
+  background-image: url(/assets/images/star-off.svg);
+  outline: none;
+  &:nth-of-type(odd) {
+    background-position: 0px 0px;
+  }
+  &:nth-of-type(even) {
+    background-position: -14px 0px;
+    margin-right: 5px;
+  }
+  background-size: cover;
+  &.star-on{
+    background-image: url(/assets/images/star-on.svg);
+  }
+}
+
+.movie-poster-button{
+  margin-bottom: 20px;
+  .add-button {
+    width: 80px;
+    padding-left:5px;
+    &:hover, &.active {
+      color: #f83938;
+      &.want2see-movie::before {
+        content: "\E803";
+      }
+      &.comment::before {
+        content: "\E805";
+      }
+    }
+    &::before {
+      padding-right:5px;
+      font-family: "fontello"
+    }
+    &.want2see-movie::before {
+      content: "\E804";
+    }
+    &.comment::before {
+      content: "\F0E5";
+    }
+  }
+}
+
+.private-box {
+  overflow: auto;
+  overflow-x: hidden;
+  width: 700px;
+  height: 500px;
+  padding: 0 15px 0 0;
+  white-space: pre-wrap;
+}
+
+.h3 {
+  margin: 0 0 20px;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.btn-default {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 60px;
+  height: 32px;
+  padding: 0 5px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background: linear-gradient(#f9f9f9, #eee);
+  text-align: center;
+  &.btn-orange {
+    border-color: #ff7400;
+    background: linear-gradient(#ff9000, #ff8000);
+    color: #fff;
+  }
+  &[disabled] {
+    border: 1px solid #ddd;
+    background: linear-gradient(#f9f9f9, #eee);
+    cursor: default;
+  }
+}
+
+.cdk-overlay-pane {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+.director-open {
+  .movie-detail {
+    overflow: hidden;
+  }
+}
+.mat-dialog-container {
+  overflow: hidden !important;
 }

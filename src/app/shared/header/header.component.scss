@@ -1,0 +1,183 @@
+@import '../../../variables';
+$header-box-shadow: 0px 0px 5px rgba(98, 98, 98, 0.4);
+:host {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+}
+.layout-header {
+  background: #fff;
+  box-shadow: $header-box-shadow;
+  transition: all .5s ease;
+  &.transparent {
+    background: transparent;
+    box-shadow: none;
+    .search-bar {
+      background-color: rgba(72, 72, 72, 0.364);
+    }
+    .gnb li>a, .user-menu >.name {
+      color: #fff;
+    }
+    .gnb li>a {
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    }
+    .menu-list a {
+      color: rgb(152, 152, 152);
+    }
+  }
+}
+
+.main-header {
+  position: relative;
+  height: 60px;
+  font-size: 16px;
+}
+.gnb {
+  li {
+    float: left;
+    .home img {
+      width: 30px;
+      vertical-align: middle;
+    }
+    a:hover {
+      color: $global-color;
+    }
+  }
+}
+.gnb li > a,
+.user-menu > .name {
+  position: relative;
+  display: block;
+  padding: 0px 15px;
+  height: 60px;
+  line-height: 60px;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left: 0px;
+    bottom: 0px;
+    transition: all 0.3s ease;
+  }
+  &:hover, &.active {
+    &::before {
+      height: 5px;
+      background: $global-color;
+    }
+  }
+}
+.search-area{
+  position: absolute;
+  width: 260px;
+  margin: 15px 0;
+  left: 50%;
+  margin-left: -130px;
+  .search-bar {
+    width: 260px;
+    height: 30px;
+    padding-left: 30px;
+    border-radius: 15px;
+    border: none;
+    background: #ddd url('../../../assets/images/icon-search.png') 10px 8px
+      no-repeat;
+    &:focus {
+      background: #fff url('../../../assets/images/icon-search-on.png') 10px 8px
+        no-repeat;
+      border: 1px solid #ddd;
+      outline: none;
+    }
+  }
+  .search-result {
+    position: relative;
+    z-index: 9999;
+    top: 10px;
+  }
+  .search-result-list{
+    overflow: hidden;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: $header-box-shadow;
+    li:first-child {
+      padding: 10px 0 10px 15px;
+      background: #eee;
+    }
+    a {
+      display: block;
+      height: 34px;
+      padding: 0px 15px;
+      line-height: 30px;
+      font-size: 1.2rem;
+      color: rgb(152, 152, 152);
+      &:hover, &:focus {
+        color: #fff;
+        background: $global-color;
+      }
+    }
+    .movie-poster {
+      float: right;
+      margin-top: 2px;
+    }
+    .more-result {
+      font-size: 1.4rem;
+      text-align: center;
+      color: rgb(123, 0, 92);
+    }
+  }
+}
+
+.user-menu {
+  float: right;
+  .user-avator {
+    margin-left: 15px;
+    background: url('../../../assets/images/bg-photo.png') no-repeat;
+    background-size: 100%;
+  }
+
+  .menu-list {
+    position: absolute;
+    display: none;
+    width: 132px;
+    height: 105px;
+    right: 0;
+    z-index: 9999;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: $header-box-shadow;
+    li {
+      a {
+        display: block;
+        height: 35px;
+        padding: 0px 10px;
+        font-size: 1.4rem;
+        line-height: 35px;
+        &:hover {
+          color: $global-color;
+        }
+      }
+    }
+    .count-archive {
+      float: right;
+    }
+  }
+  &:hover {
+    .menu-list {
+      display: block;
+    }
+  }
+}
+
+.w100 {
+  display: inline-block;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  vertical-align: middle;
+  img {
+    width: 100%;
+    vertical-align: top;
+  }
+}
