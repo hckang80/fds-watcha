@@ -59,6 +59,9 @@ export class MypageComponent implements OnInit {
   wishlistCount: number;
   watchedMoviesCount: number;
   commentListCount: number;
+  token = this.auth.getToken();
+  headers = new HttpHeaders()
+    .set('Authorization', `Token ${this.token}`);
 
   constructor(
     public http: HttpClient,
@@ -68,30 +71,21 @@ export class MypageComponent implements OnInit {
   ) { }
 
   mypageHead(): Observable<Mypageuser> {
-    const token = this.auth.getToken();
-    const headers = new HttpHeaders()
-      .set('Authorization', `Token ${token}`);
-    return this.http.get<Mypageuser>(`${this.appUrl}/members/${this.pk}/mypage-top/`, { headers })
+    return this.http.get<Mypageuser>(`${this.appUrl}/members/${this.pk}/mypage-top/`, { headers: this.headers })
       .shareReplay();
   }
 
   wishlist(): Observable<MoviePoster> {
-    const token = this.auth.getToken();
-    const headers = new HttpHeaders()
-      .set('Authorization', `Token ${token}`);
-    return this.http.get<MoviePoster>(`${this.appUrl}/members/${this.pk}/want-movie/`, { headers })
+    return this.http.get<MoviePoster>(`${this.appUrl}/members/${this.pk}/want-movie/`, { headers: this.headers })
       .shareReplay();
   }
   
-  watchedMovies() {
-    const token = this.auth.getToken();
-    const headers = new HttpHeaders()
-      .set('Authorization', `Token ${token}`);
-    return this.http.get<MoviePoster>(`${this.appUrl}/members/${this.pk}/watched-movie/`, { headers })
+  watchedMovies(): Observable<MoviePoster> {
+    return this.http.get<MoviePoster>(`${this.appUrl}/members/${this.pk}/watched-movie/`, { headers: this.headers })
       .shareReplay();
   }
 
-  commentList() {
+  commentList(): Observable<CommentedMovieList> {
     return this.http.get<CommentedMovieList>(`${this.appUrl}/members/${this.pk}/commented-movie/`)
   }
 
@@ -105,29 +99,17 @@ export class MypageComponent implements OnInit {
             this.myPageUser = res;
             this.preloader.hide();
           });
-      });
 
-    this.user.getUsers()
-      .subscribe(user => {
-        this.pk = user.pk;
         this.wishlist()
           .subscribe(res => {
             this.wishlistCount = res.count;
           });
-      });
-      
-    this.user.getUsers()
-      .subscribe(user => {
-        this.pk = user.pk;
+        
         this.watchedMovies()
           .subscribe(res => {
             this.watchedMoviesCount = res.count;
           });
-      });
 
-    this.user.getUsers()
-      .subscribe(user => {
-        this.pk = user.pk;
         this.commentList()
           .subscribe(res => {
             this.commentListCount = res.count;
