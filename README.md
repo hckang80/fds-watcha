@@ -59,3 +59,6 @@ Swift
 
 ### ETC
 Slack, Trello
+
+## 스크럼 보드
+[Scrum Board_3팀](https://docs.google.com/spreadsheets/d/1FIqL38mUCcQQt2XejVt2zTsPz3maKaFDEMTnvNmXCLw/edit#gid=1954898330)
